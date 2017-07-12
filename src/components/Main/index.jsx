@@ -1,13 +1,27 @@
 import React, { Component } from 'react'
 
+//Importacion de los componentes hijos
+import MessagesList from '../MessagesList'
+
 class Main extends Component {
+  constructor () {
+    super()
+    this.state = {
+      messages: [
+        {
+          text: 'Mensaje del Tweet',
+          picture: '',
+          displayNamme: 'Felipe Valenzuela',
+          username: 'favs92',
+          date: Date.now()
+        }
+      ]
+    }
+  }
+
   render () {
     return (
-      <div>
-        <h2>
-          Este es el Main de mi aplicación.
-        </h2>
-      </div>
+      <MessagesList messages={this.state.messages} />
     );
   }
 }
